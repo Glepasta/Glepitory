@@ -1,5 +1,10 @@
-# cli.py
-import morse1
+import os
+import morse_code as morse1
+
+print("Текущая рабочая директория:", os.getcwd())
+print("Содержимое директории:", os.listdir())
+print("Импортирован модуль morse:", morse1)
+print("Атрибуты модуля morse:", dir(morse1))
 
 def main():
     while True:
@@ -11,11 +16,11 @@ def main():
 
         if choice == '1':
             text = input("Введите текст для кодирования: ")
-            encoded_text = morse.encode(text)
+            encoded_text = morse1.encode(text)
             print("Закодированный текст: ", encoded_text)
         elif choice == '2':
             encoded_text = input("Введите закодированный текст: ")
-            decoded_text = morse.decode(encoded_text)
+            decoded_text = morse1.decode(encoded_text)
             print("Декодированный текст: ", decoded_text)
         elif choice == '3':
             print("Выход из программы.")
